@@ -1,0 +1,23 @@
+# Python-specific exclusions
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+venv/
+.venv/
+env/
+.env/
+pip-log.txt
+.pytest_cache/
+.mypy_cache/
+
+# General exclusions
+.git/
+.gitignore
+.dockerignore
+Dockerfile
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.env

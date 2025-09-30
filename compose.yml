@@ -1,0 +1,24 @@
+services:
+  ollama:
+    container_name: ollama
+    image: ollama/ollama
+    ports: 
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: ["gpu"]
+              count: all
+  server:
+    container_name: fastapi-server
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+volumes:
+  ollama_models:

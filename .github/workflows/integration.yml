@@ -15,8 +15,10 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    env:
+      OLLAMA_BASE_URL: "http://localhost"
+      OLLAMA_PORT: "11434"
     strategy:
       matrix:
         python-version: ["3.10", "3.11", "3.12"]
